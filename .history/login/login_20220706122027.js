@@ -23,26 +23,26 @@ function validarInputs() {
     validacion = true;
   
     if (email.value === "" || email.value === null) {
-      error(email, "Debe ingresar un email");
+      setError(email, "Debe ingresar un email");
       validate = false;
     } else if (!emailValido(email.value)) {
-      error(email, "Debe ingresar un email valido");
+      setError(email, "Debe ingresar un email valido");
       validate = false;
     } else if (email.value != "valeria@gmail.com") {
-      error(email, "El email no coincide con ningun email registrado");
+      setError(email, "El email no coincide con ningun email registrado");
       validate = false;
     } else {
-      validado(email);
+      setSuccess(email);
     }
   
     if (contraseña.value === "" || contraseña.value === null) {
-      error(contraseña, "Debe ingresar una contraseña");
+      setError(contraseña, "Debe ingresar una contraseña");
       validate = false;
     } else if (contraseña.value != "lppa2022") {
-      error(contraseña, "contraseña incorrecta");
+      setError(contraseña, "contraseña incorrecta");
       validate = false;
     } else {
-      validado(contraseña);
+      setSuccess(contraseña);
     }
     
   
@@ -54,25 +54,3 @@ function validarInputs() {
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
-
-const error = (element, message) => {
-    const controlInput = element.parentElement;
-    const mensajeError = controlInput.querySelector(".error");
-  
-    mensajeError.innerText = message;
-    mensajeError.classList.add("active")
-    mensajeError.classList.remove("hidden")
-    controlInput.classList.add("error");
-    controlInput.classList.remove("success");
-  };
-  
-  const validado = (element) => {
-    const controlInput = element.parentElement;
-    const mensajeError = controlInput.querySelector(".error");
-  
-    mensajeError.innerText = "";
-    mensajeError.classList.add("hidden")
-    mensajeError.classList.remove("active")
-    controlInput.classList.add("success");
-    controlInput.classList.remove("error");
-  };

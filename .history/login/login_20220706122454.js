@@ -56,23 +56,23 @@ function validarInputs() {
 }
 
 const error = (element, message) => {
-    const controlInput = element.parentElement;
-    const mensajeError = controlInput.querySelector(".error");
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".error");
   
-    mensajeError.innerText = message;
-    mensajeError.classList.add("active")
-    mensajeError.classList.remove("hidden")
-    controlInput.classList.add("error");
-    controlInput.classList.remove("success");
+    errorDisplay.innerText = message;
+    errorDisplay.classList.add("active")
+    errorDisplay.classList.remove("hidden")
+    inputControl.classList.add("error");
+    inputControl.classList.remove("success");
   };
   
   const validado = (element) => {
-    const controlInput = element.parentElement;
-    const mensajeError = controlInput.querySelector(".error");
+    const inputControl = element.parentElement;
+    const errorDisplay = inputControl.querySelector(".error");
   
-    mensajeError.innerText = "";
-    mensajeError.classList.add("hidden")
-    mensajeError.classList.remove("active")
-    controlInput.classList.add("success");
-    controlInput.classList.remove("error");
+    errorDisplay.innerText = "";
+    errorDisplay.classList.add("hidden")
+    errorDisplay.classList.remove("active")
+    inputControl.classList.add("success");
+    inputControl.classList.remove("error");
   };
