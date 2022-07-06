@@ -60,7 +60,7 @@ function validarInputs() {
       error(contraseña, "Debe ingresar una contraseña");
       validacion = false;
     } else if (contraseña.value != "lppa2022") {
-      error(contraseña, "Contraseña incorrecta");
+      error(contraseña, "contraseña incorrecta");
       validacion = false;
     } else {
       validado(contraseña);
@@ -81,6 +81,7 @@ const error = (element, message) => {
     const mensajeError = controlInput.querySelector(".error");
   
     mensajeError.innerText = message;
+    mensajeError.classList.add("active")
     mensajeError.classList.remove("hidden")
   };
   
@@ -90,4 +91,5 @@ const error = (element, message) => {
   
     mensajeError.innerText = "";
     mensajeError.classList.add("hidden")
+    mensajeError.classList.remove("active")
   };
