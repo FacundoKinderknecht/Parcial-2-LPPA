@@ -6,7 +6,7 @@ validarSesion();
 
 function validarSesion() {
   if (localStorage.logged == "true") {
-    location = "./main.html";
+    location = "./main/main.html";
   }
 }
 
@@ -35,7 +35,7 @@ function solicitudAcceso() {
   function acceso(data) {
     if (!data.error) {
       localStorage.logged = "true";
-      location = "./main.html";
+      location = "./main/main.html";
     }
   }
 
@@ -45,23 +45,23 @@ function validarInputs() {
   
     if (email.value === "" || email.value === null) {
       error(email, "Debe ingresar un email");
-      validacion = false;
+      validate = false;
     } else if (!emailValido(email.value)) {
       error(email, "Debe ingresar un email valido");
-      validacion = false;
+      validate = false;
     } else if (email.value != "valeria@gmail.com") {
       error(email, "El email no coincide con ningun email registrado");
-      validacion = false;
+      validate = false;
     } else {
       validado(email);
     }
   
     if (contraseña.value === "" || contraseña.value === null) {
       error(contraseña, "Debe ingresar una contraseña");
-      validacion = false;
+      validate = false;
     } else if (contraseña.value != "lppa2022") {
       error(contraseña, "contraseña incorrecta");
-      validacion = false;
+      validate = false;
     } else {
       validado(contraseña);
     }

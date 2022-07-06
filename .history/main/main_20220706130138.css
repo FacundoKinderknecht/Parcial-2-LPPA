@@ -30,11 +30,6 @@ a{
     color: black;
     padding: 0% 7%;
 }
-.contenedor{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 table{
 	margin: 30px 30px;
 }
@@ -51,6 +46,11 @@ table td{
 	width: 18%;
 	text-align: center;
 	background-color: #fff;
+}
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 div{
     text-align: left;
